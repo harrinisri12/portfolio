@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans bg-editorial-bg text-editorial-text transition-colors duration-300 antialiased;
+  }
+
+  /* Custom keyboard focus indicators for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-editorial-accent dark:ring-editorial-accent-dark ring-offset-2 ring-offset-editorial-bg dark:ring-offset-editorial-bg-dark;
+  }
+}
+
+/* Custom Editorial Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-200 dark:bg-neutral-800 rounded-full transition-colors hover:bg-neutral-300 dark:hover:bg-neutral-700;
+}
+
+/* Custom typography styles */
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Base style resets */
+body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
