@@ -144,7 +144,7 @@ export default function AdminDashboard({ user, setUser }) {
 
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 rounded-xl border border-editorial-border px-4 py-2 text-xs font-semibold text-editorial-text hover:bg-editorial-card dark:border-editorial-border-dark dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark"
+            className="btn-secondary gap-2 rounded-xl px-4 py-2 text-xs font-semibold"
           >
             <LogOut className="h-4 w-4" />
             Logout
@@ -230,10 +230,10 @@ export default function AdminDashboard({ user, setUser }) {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-all ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-all duration-200 cursor-pointer ${
                   filter === tab.id
-                    ? 'bg-editorial-text text-editorial-bg dark:bg-editorial-text-dark dark:text-editorial-bg-dark shadow-sm'
-                    : 'text-editorial-muted hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark'
+                    ? 'bg-editorial-text text-editorial-bg shadow-sm dark:bg-editorial-card-dark dark:text-editorial-text-dark dark:border dark:border-editorial-border-dark dark:hover:border-editorial-accent-dark'
+                    : 'text-editorial-muted hover:text-editorial-text hover:bg-editorial-card dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark dark:hover:bg-editorial-card-dark'
                 }`}
               >
                 {tab.name}
@@ -252,7 +252,7 @@ export default function AdminDashboard({ user, setUser }) {
           <button
             onClick={fetchFeedbacks}
             disabled={isLoading}
-            className="self-end md:self-auto flex items-center gap-1.5 text-xs font-semibold text-editorial-muted hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark transition-colors px-3 py-1.5 border border-editorial-border rounded-lg dark:border-editorial-border-dark bg-editorial-card dark:bg-editorial-card-dark"
+            className="btn-secondary self-end md:self-auto gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${isLoading ? 'animate-spin' : ''}`} />
             Refresh Data
@@ -281,7 +281,7 @@ export default function AdminDashboard({ user, setUser }) {
             </p>
             <button
               onClick={fetchFeedbacks}
-              className="inline-flex items-center gap-2 rounded-xl bg-editorial-text px-4 py-2.5 text-xs font-semibold text-editorial-bg dark:bg-editorial-text-dark dark:text-editorial-bg-dark"
+              className="btn-primary inline-flex gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold"
             >
               <RefreshCw className="h-3.5 w-3.5" />
               Retry Query
@@ -382,7 +382,7 @@ export default function AdminDashboard({ user, setUser }) {
                           <button
                             onClick={() => setDeleteConfirmId(null)}
                             disabled={isProcessing}
-                            className="px-2 py-1.5 rounded-lg border border-editorial-border text-xs font-semibold hover:bg-editorial-card dark:border-editorial-border-dark"
+                            className="btn-secondary px-2.5 py-1.5 rounded-lg text-xs font-semibold"
                           >
                             Cancel
                           </button>

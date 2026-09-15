@@ -65,7 +65,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
               onClick={(e) => handleScrollTo(e, '#home')}
               className="font-display text-lg font-bold tracking-tight text-editorial-text transition-opacity hover:opacity-80 dark:text-editorial-text-dark"
             >
-              HARRINI <span className="font-serif italic font-normal text-editorial-accent dark:text-editorial-accent-dark">Sri</span>
+              HARRINI SRI D
             </a>
 
             {/* Desktop Navigation */}
@@ -89,7 +89,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                 {/* Theme Switcher */}
                 <button
                   onClick={toggleTheme}
-                  className="rounded-lg p-2 text-editorial-muted transition-colors hover:bg-editorial-card hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:bg-editorial-card-dark dark:hover:text-editorial-text-dark"
+                  className="btn-icon rounded-lg p-2"
                   aria-label="Toggle theme"
                 >
                   {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -98,7 +98,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                 {/* Resume Action */}
                 <button
                   onClick={onOpenResume}
-                  className="flex items-center gap-1.5 rounded-lg bg-editorial-text px-4 py-2 text-xs font-semibold text-editorial-bg transition-colors hover:bg-editorial-text/90 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90"
+                  className="btn-primary gap-1.5 rounded-lg px-4 py-2 text-xs font-semibold"
                 >
                   <FileText className="h-3.5 w-3.5" />
                   Resume
@@ -110,7 +110,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
             <div className="flex items-center gap-3 lg:hidden">
               <button
                 onClick={toggleTheme}
-                className="rounded-lg p-1.5 text-editorial-muted transition-colors hover:bg-editorial-card dark:text-editorial-muted-dark dark:hover:bg-editorial-card-dark"
+                className="btn-icon rounded-lg p-1.5"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
@@ -118,7 +118,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="rounded-lg p-1.5 text-editorial-muted transition-colors hover:bg-editorial-card dark:text-editorial-muted-dark dark:hover:bg-editorial-card-dark"
+                className="btn-icon rounded-lg p-1.5"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -157,7 +157,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                 setIsOpen(false);
                 onOpenResume();
               }}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-editorial-text py-3 text-sm font-semibold text-editorial-bg transition-colors hover:bg-editorial-text/90 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90"
+              className="btn-primary w-full gap-2 rounded-xl py-3 text-sm font-semibold shadow-sm"
             >
               <FileText className="h-4 w-4" />
               View Resume

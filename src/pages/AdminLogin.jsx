@@ -131,7 +131,7 @@ export default function AdminLogin({ user, setUser }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-4 flex items-center justify-center gap-2 rounded-xl bg-editorial-text py-3.5 text-xs font-bold text-editorial-bg hover:bg-editorial-text/95 transition-all active:scale-[0.99] disabled:opacity-50 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/95 shadow-sm"
+            className="btn-primary w-full mt-4 gap-2 rounded-xl py-3.5 text-xs font-bold shadow-sm disabled:opacity-50"
           >
             {isLoading ? 'Authenticating...' : 'Sign In'}
             {!isLoading && <ArrowRight className="h-4 w-4" />}

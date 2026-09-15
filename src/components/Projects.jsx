@@ -105,7 +105,7 @@ export default function Projects() {
 
                     <Link
                       to={`/project/${featuredProject.id}`}
-                      className="group/btn flex items-center gap-2 rounded-xl bg-editorial-text px-5 py-3 text-xs font-bold text-editorial-bg transition-all hover:bg-editorial-text/90 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90"
+                      className="btn-primary group/btn gap-2 rounded-xl px-5 py-3 text-xs font-bold"
                     >
                       Read Case Study
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />

@@ -29,7 +29,7 @@ export default function ResumeCTA({ onOpenResume }) {
           <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-2 rounded-xl bg-editorial-text px-6 py-3.5 text-xs font-bold text-editorial-bg hover:bg-editorial-text/90 transition-all active:scale-95 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90"
+              className="btn-primary gap-2 rounded-xl px-6 py-3.5 text-xs font-bold shadow-sm"
             >
               <FileText className="h-4 w-4" />
               View Resume Online
@@ -39,7 +39,7 @@ export default function ResumeCTA({ onOpenResume }) {
             <a
               href="/resume.pdf"
               download="Harrini_Sri_Resume.pdf"
-              className="flex items-center gap-2 rounded-xl border border-editorial-border px-6 py-3.5 text-xs font-bold text-editorial-text hover:bg-editorial-card transition-all active:scale-95 dark:border-editorial-border-dark dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark"
+              className="btn-secondary gap-2 rounded-xl px-6 py-3.5 text-xs font-bold"
             >
               <Download className="h-4 w-4" />
               Download PDF

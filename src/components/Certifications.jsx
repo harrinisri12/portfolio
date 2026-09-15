@@ -33,7 +33,7 @@ export default function Certifications() {
                 <img
                   src={cert.preview}
                   alt={cert.title}
-                  className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-500"
+                  className="w-full h-full object-cover contrast-125 group-hover:scale-[1.03] transition-all duration-500"
                   loading="lazy"
                 />
                 
@@ -41,7 +41,7 @@ export default function Certifications() {
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
                   <button
                     onClick={() => setSelectedCert(cert)}
-                    className="p-3 rounded-full bg-white/90 text-editorial-text hover:bg-white shadow-md transition-all scale-90 group-hover:scale-100"
+                    className="p-3 rounded-full bg-editorial-bg/90 text-editorial-text hover:bg-editorial-bg dark:bg-editorial-card-dark/90 dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark dark:border dark:border-editorial-border-dark shadow-md transition-all scale-90 group-hover:scale-100"
                     aria-label={`Zoom preview of ${cert.title}`}
                   >
                     <ZoomIn className="h-5 w-5" />
@@ -69,7 +69,7 @@ export default function Certifications() {
                 <div className="flex items-center gap-3 border-t border-editorial-border pt-4 mt-6 dark:border-editorial-border-dark">
                   <button
                     onClick={() => setSelectedCert(cert)}
-                    className="flex-1 text-center py-2 px-3 text-xs font-semibold rounded-lg bg-editorial-card border border-editorial-border text-editorial-text hover:bg-editorial-border dark:bg-editorial-card-dark dark:border-editorial-border-dark dark:text-editorial-text-dark dark:hover:bg-editorial-border-dark transition-colors"
+                    className="btn-secondary flex-1 py-2 px-3 text-xs font-semibold rounded-lg"
                   >
                     Preview
                   </button>
@@ -78,7 +78,7 @@ export default function Certifications() {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-semibold rounded-lg bg-editorial-text text-editorial-bg hover:bg-editorial-text/90 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90 transition-colors"
+                    className="btn-primary flex-1 gap-1.5 py-2 px-3 text-xs font-semibold rounded-lg"
                   >
                     Verify
                     <ExternalLink className="h-3 w-3" />
@@ -120,14 +120,14 @@ export default function Certifications() {
                     href={selectedCert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg text-editorial-muted hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark transition-colors"
+                    className="btn-icon p-1.5 rounded-lg"
                     title="Open Verification Link"
                   >
                     <ExternalLink className="h-4 w-4" />
                   </a>
                   <button
                     onClick={() => setSelectedCert(null)}
-                    className="p-1.5 rounded-lg text-editorial-muted hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark transition-colors"
+                    className="btn-icon p-1.5 rounded-lg"
                     title="Close"
                   >
                     <X className="h-4 w-4" />

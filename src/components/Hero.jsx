@@ -63,7 +63,7 @@ export default function Hero({ onOpenResume }) {
               variants={itemVariants}
               className="font-display font-extrabold text-[2.5rem] sm:text-[4rem] md:text-[4.5rem] leading-[0.95] tracking-tightest text-editorial-text dark:text-editorial-text-dark uppercase mb-6"
             >
-              Harrini <span className="font-serif italic font-normal text-editorial-accent dark:text-editorial-accent-dark normal-case block sm:inline">Sri</span>
+              Harrini Sri D
               <span className="block mt-1 text-[2.2rem] sm:text-[3.2rem] md:text-[3.8rem] font-light text-editorial-muted dark:text-editorial-muted-dark tracking-tighter">
                 Developer &amp; AI Builder
               </span>
@@ -84,7 +84,7 @@ export default function Hero({ onOpenResume }) {
             >
               <button
                 onClick={onOpenResume}
-                className="group flex items-center gap-2 rounded-xl bg-editorial-text px-6 py-3.5 text-sm font-semibold text-editorial-bg transition-all hover:bg-editorial-text/90 hover:-translate-y-0.5 dark:bg-editorial-text-dark dark:text-editorial-bg-dark dark:hover:bg-editorial-text-dark/90 shadow-md"
+                className="btn-primary group gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold hover:-translate-y-0.5 shadow-md"
               >
                 View Resume
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -93,7 +93,7 @@ export default function Hero({ onOpenResume }) {
               <a
                 href="#projects"
                 onClick={handleScrollToProjects}
-                className="flex items-center gap-2 rounded-xl border border-editorial-border px-6 py-3.5 text-sm font-semibold text-editorial-text transition-all hover:bg-editorial-card hover:-translate-y-0.5 dark:border-editorial-border-dark dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark"
+                className="btn-secondary gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold hover:-translate-y-0.5"
               >
                 <Compass className="h-4 w-4" />
                 Featured Projects
@@ -102,7 +102,7 @@ export default function Hero({ onOpenResume }) {
               <a
                 href="/resume.pdf"
                 download="Harrini_Sri_Resume.pdf"
-                className="flex items-center gap-2 text-xs font-semibold text-editorial-muted transition-colors hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark px-4 py-2 hover:bg-editorial-card dark:hover:bg-editorial-card-dark rounded-xl"
+                className="btn-ghost gap-2 text-xs font-semibold px-4 py-2 rounded-xl"
                 title="Download Resume Directly"
               >
                 <Download className="h-3.5 w-3.5" />
@@ -153,11 +153,11 @@ export default function Hero({ onOpenResume }) {
               <img
                 src="/profile.jpg"
                 alt="Harrini Sri"
-                className="w-full h-full object-cover rounded-2xl filter grayscale contrast-[1.10] hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover rounded-2xl"
               />
               
               {/* Overlay Caption card (Minimal style) */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md border border-editorial-border/30 dark:border-editorial-border-dark/30 p-4 rounded-2xl shadow-lg">
+              <div className="absolute bottom-6 left-6 right-6 bg-editorial-bg/90 dark:bg-editorial-bg-dark/90 backdrop-blur-md border border-editorial-border/30 dark:border-editorial-border-dark/30 p-4 rounded-2xl shadow-lg">
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-display font-bold text-xs uppercase tracking-wider text-editorial-text dark:text-editorial-text-dark">
@@ -180,9 +180,9 @@ export default function Hero({ onOpenResume }) {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, type: 'spring', stiffness: 80 }}
-              className="absolute -right-4 top-10 hidden sm:block max-w-[180px] bg-white border border-editorial-border p-3.5 rounded-2xl shadow-lg dark:bg-editorial-card-dark dark:border-editorial-border-dark"
+              className="absolute -right-4 top-10 hidden sm:block max-w-[180px] bg-editorial-card border border-editorial-border p-3.5 rounded-2xl shadow-lg text-editorial-text dark:bg-editorial-card-dark dark:border-editorial-border-dark dark:text-editorial-text-dark"
             >
-              <span className="block text-[10px] font-bold tracking-widest text-editorial-muted uppercase mb-1 dark:text-editorial-muted-dark">
+              <span className="block text-[10px] font-bold tracking-widest text-editorial-accent uppercase mb-1 dark:text-editorial-accent-dark">
                 Learning Focus
               </span>
               <p className="text-[11px] font-medium leading-relaxed text-editorial-text dark:text-editorial-text-dark">
@@ -195,7 +195,7 @@ export default function Hero({ onOpenResume }) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1, type: 'spring', stiffness: 80 }}
-              className="absolute -left-4 bottom-16 hidden sm:block max-w-[180px] bg-editorial-accent-light border border-editorial-accent/10 p-3.5 rounded-2xl shadow-lg dark:bg-editorial-accent-light-dark dark:border-editorial-accent-dark/10"
+              className="absolute -left-4 bottom-16 hidden sm:block max-w-[180px] bg-editorial-accent-light border border-editorial-border p-3.5 rounded-2xl shadow-lg text-editorial-text dark:bg-editorial-accent-light-dark dark:border-editorial-border-dark dark:text-editorial-text-dark"
             >
               <span className="block text-[10px] font-bold tracking-widest text-editorial-accent uppercase mb-1 dark:text-editorial-accent-dark">
                 Current Status

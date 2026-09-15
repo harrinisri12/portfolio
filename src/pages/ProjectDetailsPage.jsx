@@ -24,7 +24,7 @@ export default function ProjectDetailsPage() {
         </p>
         <Link
           to="/"
-          className="flex items-center gap-2 rounded-xl bg-editorial-text px-5 py-3 text-xs font-bold text-editorial-bg dark:bg-editorial-text-dark dark:text-editorial-bg-dark"
+          className="btn-primary gap-2 rounded-xl px-5 py-3 text-xs font-bold"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Portfolio
@@ -105,7 +105,7 @@ export default function ProjectDetailsPage() {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover filter grayscale contrast-[1.05]"
+            className="w-full h-full object-cover contrast-[1.05]"
           />
         </div>
 

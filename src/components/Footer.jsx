@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Scroll To Top Action */}
         <button
           onClick={scrollToTop}
-          className="group flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-editorial-border hover:border-editorial-text text-xs text-editorial-muted hover:text-editorial-text transition-all dark:border-editorial-border-dark dark:hover:border-editorial-text-dark dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark"
+          className="btn-secondary group gap-1.5 px-3 py-1.5 rounded-lg text-xs"
           aria-label="Scroll back to top of page"
         >
           <span>Back to Top</span>

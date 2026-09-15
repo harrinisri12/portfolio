@@ -3,18 +3,89 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-card: #fbfbfb;
+    --color-text: #121212;
+    --color-muted: #6a6a6a;
+    --color-accent: #b23b18;
+    --color-border: #e5e5e5;
+  }
+
+  .dark {
+    --color-bg: #080808;
+    --color-card: #111111;
+    --color-text: #f4f4f4;
+    --color-muted: #9b9b9b;
+    --color-accent: #e25b34;
+    --color-border: #262626;
+  }
+
   html {
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
+    font-size: 106.25%;
   }
   
   body {
     @apply font-sans bg-editorial-bg text-editorial-text transition-colors duration-300 antialiased;
   }
 
+  .dark body {
+    @apply bg-editorial-bg-dark text-editorial-text-dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
   /* Custom keyboard focus indicators for accessibility */
   :focus-visible {
     @apply outline-none ring-2 ring-editorial-accent dark:ring-editorial-accent-dark ring-offset-2 ring-offset-editorial-bg dark:ring-offset-editorial-bg-dark;
+  }
+}
+
+@layer components {
+  /* Primary Button: Solid dark in Light theme, sleek dark card with border & accent hover in Dark theme */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 cursor-pointer
+           bg-editorial-text text-editorial-bg border border-editorial-text hover:bg-neutral-800 hover:border-neutral-800 hover:shadow-md active:scale-[0.98]
+           dark:bg-editorial-card-dark dark:text-editorial-text-dark dark:border-editorial-border-dark 
+           dark:hover:bg-neutral-800/80 dark:hover:border-editorial-accent-dark dark:hover:text-editorial-accent-dark dark:hover:shadow-md;
+  }
+
+  /* Secondary Button: Outlined in both Light & Dark themes */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 cursor-pointer
+           bg-transparent text-editorial-text border border-editorial-border hover:bg-editorial-card hover:border-neutral-400 active:scale-[0.98]
+           dark:text-editorial-text-dark dark:border-editorial-border-dark 
+           dark:hover:bg-editorial-card-dark dark:hover:border-editorial-accent-dark dark:hover:text-editorial-accent-dark;
+  }
+
+  /* Ghost / Subtle Button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 cursor-pointer
+           bg-transparent text-editorial-muted hover:text-editorial-text hover:bg-editorial-card
+           dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark dark:hover:bg-editorial-card-dark;
+  }
+
+  /* Icon Button */
+  .btn-icon {
+    @apply inline-flex items-center justify-center transition-all duration-200 cursor-pointer
+           text-editorial-muted hover:text-editorial-text hover:bg-editorial-card
+           dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark dark:hover:bg-editorial-card-dark;
+  }
+
+  /* Accent Button */
+  .btn-accent {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 cursor-pointer
+           bg-editorial-accent text-white border border-editorial-accent hover:bg-editorial-accent/90 active:scale-[0.98]
+           dark:bg-editorial-accent-dark dark:border-editorial-accent-dark dark:hover:bg-editorial-accent-dark/90;
   }
 }
 

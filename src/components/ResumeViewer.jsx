@@ -63,7 +63,7 @@ export default function ResumeViewer({ isOpen, onClose }) {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg border border-editorial-border px-3 py-1.5 text-xs font-medium text-editorial-text transition-colors hover:bg-editorial-card dark:border-editorial-border-dark dark:text-editorial-text-dark dark:hover:bg-editorial-border-dark"
+                  className="btn-secondary gap-2 rounded-lg px-3 py-1.5 text-xs font-medium"
                   title="Open in new tab"
                 >
                   <ExternalLink className="h-4 w-4" />
@@ -73,7 +73,7 @@ export default function ResumeViewer({ isOpen, onClose }) {
                 <a
                   href="/resume.pdf"
                   download="Harrini_Sri_Resume.pdf"
-                  className="flex items-center gap-2 rounded-lg bg-editorial-accent px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-editorial-accent/90 dark:bg-editorial-accent-dark dark:hover:bg-editorial-accent-dark/90"
+                  className="btn-accent gap-2 rounded-lg px-3 py-1.5 text-xs font-medium"
                   title="Download PDF"
                 >
                   <Download className="h-4 w-4" />
@@ -82,7 +82,7 @@ export default function ResumeViewer({ isOpen, onClose }) {
 
                 <button
                   onClick={onClose}
-                  className="rounded-lg p-1.5 text-editorial-muted transition-colors hover:bg-editorial-border hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:bg-editorial-border-dark dark:hover:text-editorial-text-dark"
+                  className="btn-icon rounded-lg p-1.5"
                   aria-label="Close modal"
                 >
                   <X className="h-5 w-5" />

@@ -68,10 +68,10 @@ export default function Skills() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
                   activeTab === cat 
-                    ? 'bg-editorial-text text-editorial-bg dark:bg-editorial-text-dark dark:text-editorial-bg-dark' 
-                    : 'text-editorial-muted hover:text-editorial-text dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark'
+                    ? 'bg-editorial-text text-editorial-bg shadow-sm dark:bg-editorial-card-dark dark:text-editorial-text-dark dark:border dark:border-editorial-border-dark dark:hover:border-editorial-accent-dark' 
+                    : 'text-editorial-muted hover:text-editorial-text hover:bg-editorial-card dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark dark:hover:bg-editorial-card-dark'
                 }`}
               >
                 {cat}

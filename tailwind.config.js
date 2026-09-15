@@ -26,8 +26,8 @@ export default {
           'accent-light-dark': '#1c100b',
           card: '#fbfbfb',
           'card-dark': '#111111',
-          border: '#ededed',
-          'border-dark': '#1f1f1f',
+          border: '#000000',
+          'border-dark': '#ffffff',
         }
       },
       letterSpacing: {

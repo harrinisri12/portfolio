@@ -57,7 +57,7 @@ export default function Contact() {
               {/* Copy button */}
               <button
                 onClick={handleCopyEmail}
-                className="p-3 rounded-xl border border-editorial-border text-editorial-muted hover:text-editorial-text dark:border-editorial-border-dark dark:text-editorial-muted-dark dark:hover:text-editorial-text-dark transition-all active:scale-95"
+                className="btn-secondary p-3 rounded-xl"
                 title="Copy email to clipboard"
               >
                 {copied ? <Check className="h-4.5 w-4.5 text-green-500" /> : <Copy className="h-4.5 w-4.5" />}
