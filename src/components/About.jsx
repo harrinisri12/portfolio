@@ -38,7 +38,7 @@ export default function About() {
               viewport={{ once: true, margin: '-100px' }}
               className="font-serif italic text-2xl sm:text-3xl leading-snug text-editorial-text dark:text-editorial-text-dark mb-6"
             >
-              "Code is a medium of expression. I strive to make that expression clean, purposeful, and intelligent."
+              "Building practical software solutions and continuously improving through hands-on development."
             </motion.p>
             
             <motion.p
@@ -59,7 +59,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-editorial-text dark:text-editorial-text-dark">Academic Focus</h4>
-                  <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-0.5">B.E. Computer Science Eng.</p>
+                  <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-0.5">Kongu Engineering College</p>
                 </div>
               </div>
               
@@ -68,8 +68,8 @@ export default function About() {
                   <Target className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-editorial-text dark:text-editorial-text-dark">Future Goal</h4>
-                  <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-0.5">Architecting AI-first products</p>
+                  <h4 className="text-sm font-bold text-editorial-text dark:text-editorial-text-dark">Primary Focus</h4>
+                  <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-0.5">Software, Web Dev &amp; IoT</p>
                 </div>
               </div>
             </div>
@@ -77,16 +77,16 @@ export default function About() {
 
           {/* Right Side: Interactive Focus Cards & learning list */}
           <div className="lg:col-span-6 flex flex-col gap-8">
-            {/* Areas of Interest Grid */}
+            {/* Core Areas Grid */}
             <div>
               <h3 className="font-display text-xs font-bold tracking-wider text-editorial-muted uppercase mb-4 dark:text-editorial-muted-dark">
-                Areas of Focus
+                Core Areas
               </h3>
               
               <div className="flex flex-col gap-4">
-                {aboutData.interests.map((interest, idx) => (
+                {(aboutData.coreAreas || aboutData.interests || []).map((area, idx) => (
                   <motion.div
-                    key={interest.title}
+                    key={area.title}
                     variants={cardVariants}
                     initial="offscreen"
                     whileInView="onscreen"
@@ -99,10 +99,10 @@ export default function About() {
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-editorial-text dark:text-editorial-text-dark">
-                          {interest.title}
+                          {area.title}
                         </h4>
                         <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-1 leading-relaxed">
-                          {interest.description}
+                          {area.description}
                         </p>
                       </div>
                     </div>
@@ -111,22 +111,32 @@ export default function About() {
               </div>
             </div>
 
-            {/* Current learning targets */}
+            {/* Current learning targets / On My Radar */}
             <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-bg dark:border-editorial-border-dark dark:bg-editorial-card-dark">
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="h-4 w-4 text-editorial-accent dark:text-editorial-accent-dark" />
                 <h4 className="text-xs font-bold uppercase tracking-wider text-editorial-text dark:text-editorial-text-dark">
-                  On My Radar
+                  On My Radar / Current Learning
                 </h4>
               </div>
-              <ul className="flex flex-col gap-2.5">
-                {aboutData.learningGoals.map((goal, idx) => (
-                  <li key={idx} className="flex gap-2 items-start text-xs text-editorial-muted dark:text-editorial-muted-dark leading-relaxed">
-                    <span className="text-editorial-accent dark:text-editorial-accent-dark font-medium">•</span>
-                    <span>{goal}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col gap-3">
+                {aboutData.learningGoals.map((goal, idx) => {
+                  const title = typeof goal === 'string' ? null : goal.title;
+                  const desc = typeof goal === 'string' ? goal : goal.description;
+                  return (
+                    <div key={idx} className="text-xs text-editorial-muted dark:text-editorial-muted-dark leading-relaxed">
+                      {title && (
+                        <span className="font-bold text-editorial-text dark:text-editorial-text-dark block">
+                          • {title}
+                        </span>
+                      )}
+                      <span className={title ? "block pl-3 text-[11px] mt-0.5" : ""}>
+                        {!title && "• "} {desc}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

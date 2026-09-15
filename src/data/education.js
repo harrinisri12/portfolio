@@ -1,24 +1,31 @@
 export const educationData = [
   {
-    degree: "Bachelor of Engineering (B.E.)",
-    institution: "PSG College of Technology",
-    department: "Computer Science and Engineering",
-    startYear: "2022",
-    endYear: "2026",
-    cgpa: "9.12 / 10",
+    degree: "Bachelor of Engineering — Computer Science and Engineering",
+    institution: "Kongu Engineering College",
+    period: "2025 – 2029",
+    startYear: "2025",
+    endYear: "2029",
+    location: "Perundurai, Erode, Tamil Nadu",
     coursework: [
       "Data Structures and Algorithms",
-      "Database Management Systems (RDBMS)",
       "Object-Oriented Programming",
-      "Artificial Intelligence & Machine Learning",
+      "Java Programming",
+      "C / C++ Programming",
+      "Database Management Systems",
+      "PostgreSQL",
       "Web Application Development",
-      "Software Engineering Principles"
+      "Computer Organization & Architecture",
+      "Operating Systems",
+      "Computer Networks"
     ],
-    academicHighlights: [
-      "Ranked in the top 5% of the Computer Science Engineering department.",
-      "Recipient of the Academic Merit Scholarship for consecutive years.",
-      "Technical Core Committee Member at the Department's CSE Association.",
-      "Winner of the College Smart India Hackathon internal selection round (Web track)."
+    academicFocus: [
+      "Full-Stack Web Development",
+      "Software Engineering",
+      "Data Structures & Algorithms",
+      "GIS and Spatial Applications",
+      "IoT Systems",
+      "Practical Project Development"
     ]
   }
 ];
+

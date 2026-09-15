@@ -1,82 +1,134 @@
 export const projectsData = [
   {
-    id: "medical-vision-ai",
-    title: "MedVision: AI-Powered Chest X-Ray Diagnostic Suite",
-    description: "An end-to-end full-stack computer vision application that assists radiologists by automatically segmenting and identifying anomalies in chest radiographs using deep learning models.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    technologies: ["React", "Python", "Flask", "PyTorch", "Supabase", "Tailwind CSS"],
-    githubUrl: "https://github.com/harrinisri12/medvision-ai",
-    liveUrl: "https://medvision-ai-demo.vercel.app",
+    id: "bhoomitrace",
+    title: "BhoomiTrace",
+    subtitle: "Land Acquisition & Management Platform",
+    description: "A centralized platform designed to manage land acquisition workflows using GIS mapping, role-based access, spatial databases, and digital compensation tracking.",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+    technologies: ["Java", "Spring Boot", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "PostGIS", "Leaflet", "Recharts", "Axios", "JWT", "RBAC"],
+    githubUrl: "https://github.com/harrinisri12/BhoomiTrace",
+    liveUrl: null,
     featured: true,
-    
-    // Detailed Narrative Fields
-    problem: "Radiologists in understaffed clinics face immense workloads, resulting in diagnostic backlogs and delayed patient care. There is an urgent need for intelligent, automated screening tools that can quickly prioritize scans showing critical abnormalities like pneumonia, cardiomegaly, or pneumothorax.",
-    solution: "MedVision is a web-based PACS (Picture Archiving and Communication System) companion. It uses a custom-trained PyTorch CNN backend to analyze uploaded DICOM/PNG X-ray images, returning anomaly probability maps and heatmaps showing where the model detected signs of disease. The frontend is built on React with Framer Motion, while Supabase stores medical metadata, image paths, and doctor feedback.",
     features: [
-      "Instant DICOM/PNG uploads with metadata parsing (patient age, sex, scanner specs).",
-      "Real-time heatmaps indicating structural anomalies using Grad-CAM.",
-      "Dual-pane comparison layout allowing doctors to contrast original scans with model segmentations.",
-      "Auditable diagnosis logs with feedback flags directly connected to Supabase Database.",
-      "Secure patient profiles protected by Supabase Row Level Security (RLS)."
+      "Land parcel management",
+      "GIS-based spatial visualization",
+      "Interactive map-based workflows",
+      "Land acquisition tracking",
+      "Compensation management",
+      "Rehabilitation and resettlement tracking",
+      "Role-based access control",
+      "Workflow management",
+      "Data visualization and analytics"
     ],
-    screenshots: [
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-    ],
-    developmentProcess: "The application development was split into two stages. First, I prepared and trained a DenseNet121 model on the NIH Chest X-Ray dataset. Once the model hit an AUC of 0.89, I built a Flask REST API wrapper. The second stage involved crafting a highly polished, responsive React dashboard that handles canvas-based image zooming, custom filters for adjusting contrast/brightness, and Supabase client integrations.",
-    challenges: "Handling raw DICOM files in browser environments was difficult due to file sizes and proprietary medical encodings. I resolved this by designing an asynchronous serverless pipeline: the raw file uploads directly to Supabase Storage, triggering a parser that converts the scan to web-friendly WebP formats while extracting metadata, thus bypassing local heavy processing.",
-    results: "MedVision provides a diagnostic tool with a sub-2-second inference latency, speeding up initial review times. The application shows the value of combining modern full-stack web technologies with AI models to optimize clinical tasks."
+    problem: "Managing land acquisition involves multi-department coordination, spatial parcel validation, compensation tracking, and compliance monitoring. Traditional manual records often create delays and lack transparent visibility across administrative workflows.",
+    solution: "BhoomiTrace provides a centralized digital platform integrating GIS mapping with Leaflet and PostGIS to track spatial parcel boundaries, streamline acquisition stages from survey to possession, automate compensation and rehabilitation records, and enforce role-based access control with secure JWT authentication.",
+    developmentProcess: "Developed with a Spring Boot backend in Java managing relational and spatial entities in PostgreSQL/PostGIS. The user interface was built using React, TypeScript, and Tailwind CSS, interfacing securely with REST API endpoints via Axios.",
+    challenges: "Handling spatial polygon coordinates and rendering responsive GIS layers alongside administrative workflows required structured PostGIS geospatial queries and optimized Leaflet map rendering.",
+    results: "Built a functional platform prototype demonstrating how modern web, GIS, and backend technologies can streamline land administration and acquisition workflows."
   },
   {
-    id: "collaborative-kanban",
-    title: "SyncFlow: Real-time Multi-User Kanban Workspace",
-    description: "A serverless, interactive project management platform featuring drag-and-drop actions, live presence cursors, and instant updates across connected clients using Supabase Realtime.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-    technologies: ["React", "Tailwind CSS", "Supabase Realtime", "Lucide React", "Framer Motion"],
-    githubUrl: "https://github.com/harrinisri12/syncflow-kanban",
-    liveUrl: "https://syncflow-kanban.vercel.app",
+    id: "solutionbridge",
+    title: "SolutionBridge",
+    subtitle: "Innovation & Challenge Management Platform",
+    description: "A digital platform designed to connect organizational or government challenges with startup and innovation proposals.",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "REST APIs", "JWT", "PostgreSQL"],
+    githubUrl: "https://github.com/harrinisri12/SolutionBridge",
+    liveUrl: null,
     featured: false,
-    
-    problem: "Traditional project management tools are heavy and often separate messaging from updates, leading to version conflicts when team members edit boards simultaneously without live visual updates.",
-    solution: "SyncFlow delivers a fast project boarding experience. By leveraging Supabase's PostgreSQL Replication and Realtime channels, board changes (moving cards, editing descriptions, adding checklists) are broadcasted to all active users in under 100ms. It also integrates real-time cursor presence to display where team members are looking.",
     features: [
-      "Multi-board workspaces with drag-and-drop list and card reorganizations.",
-      "Live cursor tracking displaying other collaborators' profiles.",
-      "Rich card editor supporting checklist items, markdown descriptions, and tag markers.",
-      "Database status caching supporting offline editing and automatic reconnection syncing.",
-      "Custom workspace invites backed by email authentication."
+      "Challenge publishing",
+      "Startup proposal submission",
+      "Proposal evaluation",
+      "Milestone tracking",
+      "KPI monitoring",
+      "Role-based workflows",
+      "Progress management"
     ],
-    screenshots: [
-      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-    ],
-    developmentProcess: "I chose React and Framer Motion's layout animations to build smooth transition card shifts. The database layer uses Supabase tables for workspaces, boards, lists, cards, and profiles. Supabase Broadcast and Presence channels track active users and send live mouse coordinates without cluttering standard database writes.",
-    challenges: "The primary challenge was managing cursor tracking frequency to prevent network congestion. I solved this by implementing high-performance throttle loops (30ms limit) and using compact relative screen percentage coordinates.",
-    results: "Created a smooth project tool that behaves like a native desktop app, demonstrating how serverless WebSockets can support interactive collaborative experiences."
+    problem: "Organizations and government bodies need structured channels to invite agile startup proposals, while innovators require transparent milestone tracking and review processes.",
+    solution: "SolutionBridge establishes a centralized portal where challenges are published, submissions are systematically evaluated through role-based stages, and project KPIs are tracked seamlessly.",
+    developmentProcess: "Architected with a responsive React frontend styled using Tailwind CSS, structured around intuitive dashboard workflows for tracking proposals through their evaluation lifecycle.",
+    challenges: "Designing an intuitive UI capable of presenting complex multi-stage evaluation workflows clearly to both reviewers and startups.",
+    results: "Created a clean platform interface facilitating innovation collaboration between public challenges and startup solutions."
   },
   {
-    id: "sustainable-marketplace",
-    title: "EcoEco: Peer-to-Peer Green Commerce Platform",
-    description: "A clean, sustainable marketplace connecting local consumers with eco-friendly creators, supporting smart geo-filtering, stripe payments, and seller verification workflows.",
-    image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=800&q=80",
-    technologies: ["React", "Vite", "Node.js", "PostgreSQL", "Supabase Storage", "Tailwind CSS"],
-    githubUrl: "https://github.com/harrinisri12/ecoeco-marketplace",
-    liveUrl: "https://ecoeco-marketplace.vercel.app",
+    id: "iot-pothole-detection",
+    title: "IoT-Based Smart Pothole Detection System",
+    subtitle: "Road Monitoring & Hazard Detection",
+    description: "An IoT-based road monitoring system designed to detect potholes and transmit road-condition information to a centralized web dashboard.",
+    image: "https://images.unsplash.com/photo-1515260268569-9271009adfdb?auto=format&fit=crop&w=800&q=80",
+    technologies: ["ESP32", "IoT", "Firebase", "JavaScript", "HTML5", "CSS3"],
+    githubUrl: "https://github.com/harrinisri12/IOT-pothole-detection",
+    liveUrl: null,
     featured: false,
-    
-    problem: "Finding verified zero-waste or organic products locally is difficult due to greenwashing and fragmentation among small-scale eco-conscious creators who lack professional online storefronts.",
-    solution: "EcoEco provides a unified platform where creators go through a carbon-offset checklist to gain a verification badge. Users can search for organic produce, hand-made items, or clean clothing, with direct filtering by distance and delivery options.",
+    achievement: "Second Place — KEC Mini Hackathon 2026",
     features: [
-      "Seller application dashboard with Supabase Storage upload for validation documents.",
-      "Interactive map search integrating local postal coordinates.",
-      "Full catalog management supporting variations (size, color, weight).",
-      "Stripe integration with support for split merchant payouts.",
-      "Comprehensive product reviews and buyer verification tags."
+      "Pothole detection",
+      "ESP32-based data collection",
+      "Cloud data synchronization",
+      "Firebase integration",
+      "Live web dashboard",
+      "Road hazard monitoring"
     ],
-    screenshots: [
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80"
+    problem: "Undetected road hazards and potholes cause vehicular damage and safety risks, while manual road survey methods are slow and periodic.",
+    solution: "An IoT-based road monitoring system utilizing an ESP32 microcontroller with sensors to detect road surface irregularities in real-time, synchronizing telemetry data to Firebase and a live web dashboard.",
+    developmentProcess: "Programmed ESP32 sensor thresholds to capture road vibration data, integrated Firebase Realtime Database for cloud storage, and built a companion web interface for visualizing road conditions.",
+    challenges: "Calibrating sensor threshold triggers on the ESP32 to distinguish between genuine road hazards and minor vibrations, and ensuring reliable data transmission.",
+    results: "Won Second Place at KEC Mini Hackathon 2026 with a functioning IoT prototype demonstrating automated road hazard detection."
+  },
+  {
+    id: "flyaway",
+    title: "FlyAway",
+    subtitle: "Your Trip Manager",
+    description: "A travel management application designed to help users organize and manage their trips from a single platform.",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Travel Management"],
+    githubUrl: null,
+    liveUrl: null,
+    featured: false,
+    presentation: "Presented as part of Pitch For Tomorrow during E-Horizon 2K26 at Kongu Engineering College.",
+    features: [
+      "Trip management",
+      "Itinerary planning",
+      "Expense tracking",
+      "Smart reminders",
+      "AI travel assistant",
+      "Group trip coordination",
+      "Travel checklist",
+      "Digital notepad",
+      "Travel dashboard"
     ],
-    developmentProcess: "I built the app with a modular component architecture. Sellers upload high-res item photos directly to a public Supabase Storage bucket, optimized client-side using canvas resize pre-processors. The geo-searching utilizes PostgreSQL PostGIS extension functions through Supabase RPCs.",
-    challenges: "PostGIS coordinate mapping query optimization on Postgres was challenging. I resolved this by indexing coordinates with gist indexes, cutting query times for active listings down to less than 15ms.",
-    results: "EcoEco demonstrates a clean e-commerce system that combines geographic searches, Stripe webhooks, and secure storage to connect sustainable local communities."
+    problem: "Travelers frequently struggle with fragmented tools for itineraries, tickets, expense calculations, checklists, and group coordination.",
+    solution: "FlyAway brings together trip itineraries, expense tracking, group coordination, smart reminders, and an AI travel assistant into a unified, user-friendly travel manager.",
+    developmentProcess: "Designed and prototyped with interactive travel management modules, expense calculation workflows, and group itinerary coordination features.",
+    challenges: "Consolidating diverse travel workflows—such as multi-currency expense tracking and dynamic itinerary schedules—into an intuitive mobile-friendly layout.",
+    results: "Presented during Pitch For Tomorrow at E-Horizon 2K26 at Kongu Engineering College."
+  },
+  {
+    id: "personal-portfolio",
+    title: "Personal Portfolio & Feedback Portal",
+    subtitle: "Portfolio & Visitor Feedback System",
+    description: "A responsive personal portfolio website designed to showcase projects, skills, education, achievements, and professional development.",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "Vite", "Tailwind CSS", "JavaScript", "Supabase"],
+    githubUrl: "https://github.com/harrinisri12/portfolio",
+    liveUrl: "/",
+    featured: false,
+    features: [
+      "Responsive portfolio",
+      "Project showcase",
+      "Skill matrix",
+      "Education section",
+      "Visitor feedback system",
+      "Supabase backend",
+      "Admin dashboard",
+      "Feedback filtering and management"
+    ],
+    problem: "Need a clean, responsive, and organized platform to showcase student projects, technical capabilities, and receive direct visitor feedback.",
+    solution: "A modern single-page portfolio built with React and Tailwind CSS, integrated with Supabase for visitor feedback storage and an authenticated Admin Dashboard.",
+    developmentProcess: "Developed using Vite and React, styled with Tailwind CSS utility design tokens, and powered by Supabase PostgreSQL and authentication for the backend.",
+    challenges: "Ensuring consistent, theme-aware color styling across all interactive elements in both dark and light modes without visual glitches.",
+    results: "Created a clean, accessible portfolio presenting verified project work and interactive feedback capabilities."
   }
 ];
+

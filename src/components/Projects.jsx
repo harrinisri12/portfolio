@@ -15,7 +15,7 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         {/* Section Index Marker */}
         <div className="flex items-center gap-3 mb-12">
-          <span className="font-serif italic text-lg text-editorial-accent dark:text-editorial-accent-dark">03 //</span>
+          <span className="font-serif italic text-lg text-editorial-accent dark:text-editorial-accent-dark">04 //</span>
           <h2 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark">
             Selected Works
           </h2>

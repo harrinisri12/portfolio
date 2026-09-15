@@ -49,11 +49,11 @@ export default function ResumeViewer({ isOpen, onClose }) {
             {/* Header */}
             <div className="flex items-center justify-between border-b border-editorial-border px-6 py-4 dark:border-editorial-border-dark">
               <div>
-                <h2 id="resume-title" class="font-display text-lg font-semibold tracking-tight text-editorial-text dark:text-editorial-text-dark">
-                  Resume: Harrini Sri
+                <h2 id="resume-title" className="font-display text-lg font-semibold tracking-tight text-editorial-text dark:text-editorial-text-dark">
+                  Resume: Harrini Sri D
                 </h2>
                 <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark">
-                  CSE Student & Full-Stack Developer
+                  Computer Science Student &amp; Developer
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function ResumeViewer({ isOpen, onClose }) {
             <div className="flex-1 bg-neutral-100 dark:bg-neutral-900 overflow-hidden relative rounded-b-2xl">
               <iframe
                 src="/resume.pdf#toolbar=0"
-                title="Harrini Sri Resume"
+                title="Harrini Sri D Resume"
                 className="h-full w-full border-0"
               />
             </div>

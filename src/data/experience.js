@@ -1,32 +1,35 @@
 export const experienceData = [
   {
-    company: "Aura Smart Solutions",
-    role: "Full-Stack Developer Intern",
-    startDate: "May 2025",
-    endDate: "July 2025",
-    description: "Collaborated on building IoT sensor dashboards and dashboard control panels for corporate client office management.",
-    responsibilities: [
-      "Developed high-performance live charts using Recharts and React, reducing dashboard lag by 40%.",
-      "Integrated REST API endpoints using Node.js and Express to poll environmental sensor readings.",
-      "Implemented a class-based light/dark theme system aligned with client branding guidelines.",
-      "Automated sensor alerting systems via Webhooks and Slack integration."
+    company: "Coptercode",
+    role: "Full Stack Developer Intern",
+    duration: "1 Month",
+    startDate: "Internship",
+    endDate: "1 Month",
+    description: "Worked as a Full Stack Developer Intern at Coptercode and contributed to the development of The Bill Book, a GST invoice management platform.",
+    project: "The Bill Book",
+    projectDescription: "A business management platform designed to simplify invoicing, quotations, customer management, inventory, payments, and business reporting.",
+    features: [
+      "GST invoice generation",
+      "Quotation and estimate management",
+      "Customer and vendor management",
+      "Inventory and stock tracking",
+      "Payment and outstanding tracking",
+      "OCR-based invoice and receipt data extraction",
+      "Revenue and GST analytics",
+      "Business reports",
+      "GSTR-related data management",
+      "Seller and client workflows"
     ],
-    technologies: ["React.js", "Node.js", "Express", "Chart.js", "CSS3", "Git"],
-    learningOutcomes: "Learned how to handle massive real-time data streams and optimize DOM rendering of high-frequency updates, as well as working inside a professional agile sprint model."
-  },
-  {
-    company: "CSE Dept, Academic Lab",
-    role: "Research Assistant (AI & Vision)",
-    startDate: "December 2024",
-    endDate: "April 2025",
-    description: "Supported research on human pose estimation algorithms and real-time posture tracking models.",
-    responsibilities: [
-      "Customized Google MediaPipe models to extract coordinates of skeletal joints from camera streams.",
-      "Built a lightweight prototype website in React to demonstrate physical therapy exercise tracking in real-time.",
-      "Optimized model inference speed on lower-end devices by resizing input canvas contexts dynamically.",
-      "Documented performance benchmarks and model accuracy metrics for academic submission."
+    workflow: "Customer → Quotation → Invoice → Payment → Reports",
+    learnings: [
+      "Full-stack application development",
+      "Working with real-world business requirements",
+      "Building practical user workflows",
+      "Frontend and backend integration",
+      "Production-oriented application development",
+      "Collaborative software development"
     ],
-    technologies: ["React", "Python", "MediaPipe", "OpenCV", "TensorFlow", "HTML5"],
-    learningOutcomes: "Gained valuable experience in browser-based AI model execution, WebGL rendering, and how to represent complex machine learning predictions visually to end-users."
+    technologies: ["React", "JavaScript", "Full Stack Development", "REST APIs", "GST Invoicing", "OCR & Analytics"]
   }
 ];
+

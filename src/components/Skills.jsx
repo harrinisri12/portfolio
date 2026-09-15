@@ -4,20 +4,23 @@ import { skillsData } from '../data/skills';
 import { 
   Code, Terminal, Cpu, Layers, Atom, Zap, Paintbrush, 
   Server, Activity, Database, CloudLightning, Brain, 
-  Eye, Maximize, TrendingUp, GitBranch, Monitor, HelpCircle 
+  Eye, Maximize, TrendingUp, GitBranch, Monitor, HelpCircle,
+  Lock, Shield, MapPin, Share2, Radio
 } from 'lucide-react';
 import { Github, Figma } from './BrandIcons';
 
 const iconMap = {
   Code, Terminal, Cpu, Layers, Atom, Zap, Paintbrush, 
   Server, Activity, Database, CloudLightning, Brain, 
-  Eye, Maximize, TrendingUp, GitBranch, Github, Monitor, Figma
+  Eye, Maximize, TrendingUp, GitBranch, Github, Monitor, Figma,
+  Lock, Shield, MapPin, Share2, Radio
 };
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('All');
   
-  const categories = ['All', 'Languages', 'Frontend', 'Backend', 'Database', 'AI / ML', 'Tools'];
+  const categories = ['All', 'Languages', 'Frontend', 'Backend', 'Database', 'Tools & IoT'];
+
 
   // Filter skills based on tab selection
   const filteredSkills = activeTab === 'All' 

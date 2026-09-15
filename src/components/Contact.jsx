@@ -21,15 +21,15 @@ export default function Contact() {
           {/* Left Column: Big Editorial Headers */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="font-serif italic text-lg text-editorial-accent dark:text-editorial-accent-dark mb-4">
-              07 // Let's Connect
+              05 // Let's Connect
             </span>
             
             <h2 className="font-display font-extrabold text-[2.5rem] sm:text-[3.5rem] leading-[1.0] tracking-tightest text-editorial-text dark:text-editorial-text-dark uppercase mb-6">
-              Let's build<br />something<br />extraordinary.
+              Let's build<br />practical solutions<br />together.
             </h2>
             
             <p className="text-base text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light max-w-md">
-              Whether you have an internship opportunity, need feedback on a project, or simply want to chat about AI models and full-stack architecture—my inbox is open.
+              Whether you want to discuss a project, explore collaboration opportunities, or chat about software development, Java, and IoT—my inbox is open.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function Contact() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com/in/harrini-sri"
+                href="https://www.linkedin.com/in/harrini-sri-d"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-6 rounded-3xl border border-editorial-border bg-editorial-bg dark:border-editorial-border-dark dark:bg-editorial-bg-dark flex items-center gap-4 hover:shadow-md transition-all hover:-translate-y-0.5"

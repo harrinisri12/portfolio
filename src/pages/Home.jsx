@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
-import Projects from '../components/Projects';
 import Experience from '../components/Experience';
-import Education from '../components/Education';
+import Projects from '../components/Projects';
+import Achievements from '../components/Achievements';
 import Certifications from '../components/Certifications';
+import Education from '../components/Education';
 import ResumeCTA from '../components/ResumeCTA';
-import Contact from '../components/Contact';
 import FeedbackForm from '../components/FeedbackForm';
+import Contact from '../components/Contact';
 
 export default function Home({ onOpenResume }) {
   // Listen for hash parameter scroll redirects on load
@@ -37,13 +38,15 @@ export default function Home({ onOpenResume }) {
       <Hero onOpenResume={onOpenResume} />
       <About />
       <Skills />
-      <Projects />
       <Experience />
-      <Education />
+      <Projects />
+      <Achievements />
       <Certifications />
+      <Education />
       <ResumeCTA onOpenResume={onOpenResume} />
-      <Contact />
       <FeedbackForm />
+      <Contact />
     </div>
   );
 }
+

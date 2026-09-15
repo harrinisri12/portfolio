@@ -65,7 +65,7 @@ export default function Hero({ onOpenResume }) {
             >
               Harrini Sri D
               <span className="block mt-1 text-[2.2rem] sm:text-[3.2rem] md:text-[3.8rem] font-light text-editorial-muted dark:text-editorial-muted-dark tracking-tighter">
-                Developer &amp; AI Builder
+                Student &amp; Developer
               </span>
             </motion.h1>
 
@@ -125,7 +125,7 @@ export default function Hero({ onOpenResume }) {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/in/harrini-sri"
+                href="https://www.linkedin.com/in/harrini-sri-d"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-editorial-muted transition-colors hover:text-editorial-accent dark:text-editorial-muted-dark dark:hover:text-editorial-accent-dark"
@@ -152,7 +152,7 @@ export default function Hero({ onOpenResume }) {
             >
               <img
                 src="/profile.jpg"
-                alt="Harrini Sri"
+                alt="Harrini Sri D"
                 className="w-full h-full object-cover rounded-2xl"
               />
               
@@ -161,15 +161,15 @@ export default function Hero({ onOpenResume }) {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-display font-bold text-xs uppercase tracking-wider text-editorial-text dark:text-editorial-text-dark">
-                      PSG Tech B.E. CSE
+                      Kongu Engineering College
                     </h3>
                     <p className="text-[10px] text-editorial-muted dark:text-editorial-muted-dark">
-                      Class of 2026
+                      B.E. CSE (2025–2029)
                     </p>
                   </div>
                   <span className="flex items-center gap-1 text-[10px] font-bold text-editorial-accent dark:text-editorial-accent-dark">
                     <MapPin className="h-3 w-3" />
-                    Coimbatore, IN
+                    Tirupur, Tamil Nadu, India
                   </span>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function Hero({ onOpenResume }) {
                 Current Status
               </span>
               <p className="text-[11px] font-semibold text-editorial-text dark:text-editorial-text-dark">
-                Seeking Full-Stack &amp; AI Internships
+                Student Developer &amp; Project Builder
               </p>
             </motion.div>
           </div>

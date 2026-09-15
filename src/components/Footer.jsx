@@ -14,11 +14,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Logo/Credits */}
         <div className="text-center sm:text-left">
-          <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark">
-            © {new Date().getFullYear()} Harrini Sri. All rights reserved.
+          <p className="text-xs font-medium text-editorial-text dark:text-editorial-text-dark">
+            © Harrini Sri D. Student Developer • Tirupur, Tamil Nadu, India
           </p>
-          <p className="text-[10px] text-neutral-400 dark:text-neutral-600 mt-1">
-            Engineered with React + Tailwind CSS + Supabase.
+          <p className="text-[11px] text-editorial-muted dark:text-editorial-muted-dark mt-1 font-light">
+            Building practical solutions, learning through projects, and continuously improving.
           </p>
         </div>
 

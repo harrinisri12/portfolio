@@ -18,10 +18,10 @@ export default function ResumeCTA({ onOpenResume }) {
           {/* Left copy */}
           <div className="text-center md:text-left">
             <h3 className="font-serif italic text-2xl sm:text-3xl text-editorial-text dark:text-editorial-text-dark tracking-tight">
-              Looking for a full-stack engineer?
+              Looking for a student developer?
             </h3>
             <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark mt-2 max-w-xl font-light">
-              Review my structured skills, academic timeline, and internships in a single unified document. Available to view online or download as a PDF.
+              Review my structured skills, academic timeline, and GitHub projects in a single unified document. Available to view online or download as a PDF.
             </p>
           </div>
 

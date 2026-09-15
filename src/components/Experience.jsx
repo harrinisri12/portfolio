@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, ArrowUpRight } from 'lucide-react';
+import { Briefcase, CheckCircle2, ArrowRight } from 'lucide-react';
 import { experienceData } from '../data/experience';
 
 export default function Experience() {
@@ -9,9 +9,9 @@ export default function Experience() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         {/* Section Index Marker */}
         <div className="flex items-center gap-3 mb-16">
-          <span className="font-serif italic text-lg text-editorial-accent dark:text-editorial-accent-dark">04 //</span>
+          <span className="font-serif italic text-lg text-editorial-accent dark:text-editorial-accent-dark">03 //</span>
           <h2 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark">
-            Professional Experience
+            Experience &amp; Internships
           </h2>
         </div>
 
@@ -24,68 +24,101 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ type: 'spring', stiffness: 70, damping: 15, delay: idx * 0.1 }}
-              className="p-8 rounded-3xl border border-editorial-border bg-editorial-bg hover:shadow-lg transition-all dark:border-editorial-border-dark dark:bg-editorial-bg-dark"
+              className="p-8 md:p-10 rounded-3xl border border-editorial-border bg-editorial-bg hover:shadow-lg transition-all dark:border-editorial-border-dark dark:bg-editorial-bg-dark"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                {/* Left Side: Corporate Details */}
+                {/* Left Column: Organization & Role */}
                 <div className="lg:col-span-4 flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-bold text-editorial-accent uppercase tracking-widest dark:text-editorial-accent-dark">
-                      {exp.startDate} — {exp.endDate}
-                    </span>
-                    <h3 className="font-display font-extrabold text-xl text-editorial-text dark:text-editorial-text-dark mt-2">
-                      {exp.company}
-                    </h3>
-                    <p className="text-sm font-semibold text-editorial-muted dark:text-editorial-muted-dark mt-1">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-editorial-accent-light text-editorial-accent dark:bg-editorial-accent-light-dark dark:text-editorial-accent-dark mb-3">
+                      <span>{exp.duration}</span>
+                    </div>
+                    <h3 className="font-display font-extrabold text-2xl text-editorial-text dark:text-editorial-text-dark">
                       {exp.role}
+                    </h3>
+                    <p className="text-base font-bold text-editorial-accent dark:text-editorial-accent-dark mt-1">
+                      {exp.company}
+                    </p>
+                    <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-3 leading-relaxed">
+                      {exp.description}
                     </p>
                   </div>
 
-                  {/* Icon Indicator */}
-                  <div className="hidden lg:flex items-center gap-2 text-editorial-border dark:text-editorial-border-dark mt-6">
-                    <Briefcase className="h-5 w-5" />
-                    <span className="h-px bg-editorial-border dark:bg-editorial-border-dark flex-1" />
-                  </div>
+                  {/* Project Focus Box */}
+                  {exp.project && (
+                    <div className="mt-6 p-4 rounded-2xl border border-editorial-border dark:border-editorial-border-dark bg-editorial-card dark:bg-editorial-card-dark">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-editorial-accent dark:text-editorial-accent-dark block mb-1">
+                        Project Contributed
+                      </span>
+                      <h4 className="text-sm font-bold text-editorial-text dark:text-editorial-text-dark">
+                        {exp.project}
+                      </h4>
+                      <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-1 leading-relaxed">
+                        {exp.projectDescription}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
-                {/* Right Side: Responsibilities & Learning */}
+                {/* Right Column: Features, Workflow & Learnings */}
                 <div className="lg:col-span-8 flex flex-col gap-6">
-                  {/* Brief Overview */}
-                  <p className="text-sm text-editorial-text dark:text-editorial-text-dark leading-relaxed font-normal">
-                    {exp.description}
-                  </p>
+                  {/* Workflow Banner */}
+                  {exp.workflow && (
+                    <div className="p-3.5 rounded-xl border border-editorial-border dark:border-editorial-border-dark bg-editorial-card dark:bg-editorial-card-dark flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-editorial-accent dark:text-editorial-accent-dark">
+                        Core Workflow
+                      </span>
+                      <span className="text-xs font-semibold text-editorial-text dark:text-editorial-text-dark">
+                        {exp.workflow}
+                      </span>
+                    </div>
+                  )}
 
-                  {/* Bullet points */}
-                  <ul className="flex flex-col gap-3">
-                    {exp.responsibilities.map((resp, rIdx) => (
-                      <li key={rIdx} className="flex gap-3 items-start text-xs text-editorial-muted dark:text-editorial-muted-dark leading-relaxed">
-                        <span className="h-1.5 w-1.5 rounded-full bg-editorial-accent dark:bg-editorial-accent-dark mt-1.5 shrink-0" />
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Features Contributed */}
+                  {exp.features && exp.features.length > 0 && (
+                    <div>
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-editorial-text dark:text-editorial-text-dark mb-3">
+                        Key Features &amp; Modules Built
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {exp.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-start gap-2 text-xs text-editorial-muted dark:text-editorial-muted-dark">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-editorial-accent dark:text-editorial-accent-dark shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
-                  {/* Technical Stack Tags */}
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  {/* Learning / Contribution */}
+                  {exp.learnings && exp.learnings.length > 0 && (
+                    <div className="pt-2">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-editorial-text dark:text-editorial-text-dark mb-3">
+                        Learnings &amp; Practical Contributions
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {exp.learnings.map((lrn, lIdx) => (
+                          <div key={lIdx} className="flex items-start gap-2 text-xs text-editorial-muted dark:text-editorial-muted-dark">
+                            <span className="h-1.5 w-1.5 rounded-full bg-editorial-accent dark:bg-editorial-accent-dark mt-1.5 shrink-0" />
+                            <span>{lrn}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-editorial-border dark:border-editorial-border-dark">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[9px] font-bold uppercase tracking-wider bg-neutral-100 text-editorial-text dark:bg-neutral-900 dark:text-editorial-text-dark px-2.5 py-1 rounded-md"
+                        className="text-[9px] font-bold uppercase tracking-wider bg-editorial-card border border-editorial-border text-editorial-text dark:bg-editorial-card-dark dark:border-editorial-border-dark dark:text-editorial-text-dark px-2.5 py-1 rounded-md"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-
-                  {/* Learning Outcome Box */}
-                  {exp.learningOutcomes && (
-                    <div className="mt-2 p-4 rounded-xl border border-editorial-border/40 bg-editorial-card dark:border-editorial-border-dark/40 dark:bg-editorial-card-dark text-[11px] text-editorial-muted dark:text-editorial-muted-dark italic leading-relaxed">
-                      <span className="font-semibold not-italic block uppercase tracking-wider text-[9px] text-editorial-accent dark:text-editorial-accent-dark mb-1">
-                        Key Takeaway
-                      </span>
-                      "{exp.learningOutcomes}"
-                    </div>
-                  )}
                 </div>
               </div>
             </motion.div>
@@ -95,3 +128,4 @@ export default function Experience() {
     </section>
   );
 }
+

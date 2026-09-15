@@ -52,7 +52,7 @@ export default function ProjectDetailsPage() {
 
         {/* Project Header Title */}
         <header className="mb-10">
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
@@ -61,11 +61,28 @@ export default function ProjectDetailsPage() {
                 {tech}
               </span>
             ))}
+            {project.achievement && (
+              <span className="text-[10px] font-bold bg-editorial-accent-light text-editorial-accent dark:bg-editorial-accent-light-dark dark:text-editorial-accent-dark px-2.5 py-0.5 rounded-md">
+                {project.achievement}
+              </span>
+            )}
           </div>
 
-          <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight uppercase mb-4">
+          <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight uppercase mb-2">
             {project.title}
           </h1>
+
+          {project.subtitle && (
+            <p className="text-sm font-bold uppercase tracking-wider text-editorial-accent dark:text-editorial-accent-dark mb-4">
+              {project.subtitle}
+            </p>
+          )}
+
+          {project.presentation && (
+            <div className="p-3 mb-4 rounded-xl border border-editorial-border dark:border-editorial-border-dark bg-editorial-card dark:bg-editorial-card-dark text-xs text-editorial-accent dark:text-editorial-accent-dark font-medium">
+              📍 {project.presentation}
+            </div>
+          )}
 
           <p className="text-base sm:text-lg font-light text-editorial-muted dark:text-editorial-muted-dark leading-relaxed">
             {project.description}
@@ -112,62 +129,72 @@ export default function ProjectDetailsPage() {
         {/* Narrative Flow */}
         <div className="space-y-16">
           {/* Segment 1: The Problem & Solution Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* The Problem */}
-            <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-card dark:border-editorial-border-dark dark:bg-editorial-card-dark">
-              <div className="flex items-center gap-2 text-editorial-accent dark:text-editorial-accent-dark mb-4">
-                <HelpCircle className="h-5 w-5" />
-                <h3 className="text-xs font-bold uppercase tracking-wider">The Problem</h3>
-              </div>
-              <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
-                {project.problem}
-              </p>
-            </div>
+          {(project.problem || project.solution) && (
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {/* The Problem */}
+              {project.problem && (
+                <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-card dark:border-editorial-border-dark dark:bg-editorial-card-dark">
+                  <div className="flex items-center gap-2 text-editorial-accent dark:text-editorial-accent-dark mb-4">
+                    <HelpCircle className="h-5 w-5" />
+                    <h3 className="text-xs font-bold uppercase tracking-wider">The Problem</h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
+                    {project.problem}
+                  </p>
+                </div>
+              )}
 
-            {/* The Solution */}
-            <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-card dark:border-editorial-border-dark dark:bg-editorial-card-dark">
-              <div className="flex items-center gap-2 text-editorial-accent dark:text-editorial-accent-dark mb-4">
-                <Lightbulb className="h-5 w-5" />
-                <h3 className="text-xs font-bold uppercase tracking-wider">The Approach</h3>
-              </div>
-              <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
-                {project.solution}
-              </p>
-            </div>
-          </section>
+              {/* The Solution */}
+              {project.solution && (
+                <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-card dark:border-editorial-border-dark dark:bg-editorial-card-dark">
+                  <div className="flex items-center gap-2 text-editorial-accent dark:text-editorial-accent-dark mb-4">
+                    <Lightbulb className="h-5 w-5" />
+                    <h3 className="text-xs font-bold uppercase tracking-wider">The Approach</h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
+                    {project.solution}
+                  </p>
+                </div>
+              )}
+            </section>
+          )}
 
           {/* Segment 2: Key Features */}
-          <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
-            <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark mb-6">
-              Key Features &amp; Architecture
-            </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {project.features.map((feature, fIdx) => (
-                <li
-                  key={fIdx}
-                  className="p-4 rounded-xl border border-editorial-border/40 bg-editorial-card/30 dark:border-editorial-border-dark/40 dark:bg-editorial-card-dark/30 flex gap-3 text-xs text-editorial-muted dark:text-editorial-muted-dark font-light leading-relaxed"
-                >
-                  <span className="text-editorial-accent dark:text-editorial-accent-dark font-serif italic text-sm">
-                    {fIdx + 1}.
-                  </span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          {project.features && project.features.length > 0 && (
+            <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark mb-6">
+                Key Features &amp; Architecture
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {project.features.map((feature, fIdx) => (
+                  <li
+                    key={fIdx}
+                    className="p-4 rounded-xl border border-editorial-border/40 bg-editorial-card/30 dark:border-editorial-border-dark/40 dark:bg-editorial-card-dark/30 flex gap-3 text-xs text-editorial-muted dark:text-editorial-muted-dark font-light leading-relaxed"
+                  >
+                    <span className="text-editorial-accent dark:text-editorial-accent-dark font-serif italic text-sm">
+                      {fIdx + 1}.
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* Segment 3: Development Process */}
-          <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
-            <div className="flex items-center gap-2.5 mb-6">
-              <Compass className="h-5 w-5 text-editorial-accent dark:text-editorial-accent-dark" />
-              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark">
-                Development Process
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
-              {project.developmentProcess}
-            </p>
-          </section>
+          {project.developmentProcess && (
+            <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
+              <div className="flex items-center gap-2.5 mb-6">
+                <Compass className="h-5 w-5 text-editorial-accent dark:text-editorial-accent-dark" />
+                <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark">
+                  Development Process
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
+                {project.developmentProcess}
+              </p>
+            </section>
+          )}
 
           {/* Segment 4: Screenshots collage */}
           {project.screenshots && project.screenshots.length > 0 && (
@@ -193,33 +220,37 @@ export default function ProjectDetailsPage() {
           )}
 
           {/* Segment 5: Technical Challenges */}
-          <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
-            <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark mb-6">
-              Technical Challenges &amp; Overcoming Obstacles
-            </h3>
-            <div className="p-6 rounded-2xl border border-red-100 bg-red-50/20 text-red-950 dark:border-red-900/10 dark:bg-red-950/5 dark:text-red-100">
-              <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
-                {project.challenges}
-              </p>
-            </div>
-          </section>
-
-          {/* Segment 6: Business Results & Takeaways */}
-          <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
-            <div className="p-6 rounded-3xl border border-editorial-accent/20 bg-editorial-accent-light dark:border-editorial-accent-dark/20 dark:bg-editorial-accent-light-dark flex flex-col sm:flex-row items-center gap-6">
-              <div className="h-12 w-12 rounded-2xl bg-editorial-accent text-white flex items-center justify-center shrink-0">
-                <Award className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="font-display text-xs font-bold uppercase tracking-wider text-editorial-accent dark:text-editorial-accent-dark mb-1">
-                  Results &amp; Impact
-                </h4>
-                <p className="text-xs sm:text-sm text-editorial-text dark:text-editorial-text-dark font-medium leading-relaxed">
-                  {project.results}
+          {project.challenges && (
+            <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-editorial-text dark:text-editorial-text-dark mb-6">
+                Technical Challenges &amp; Overcoming Obstacles
+              </h3>
+              <div className="p-6 rounded-2xl border border-editorial-border bg-editorial-card dark:border-editorial-border-dark dark:bg-editorial-card-dark">
+                <p className="text-xs sm:text-sm text-editorial-muted dark:text-editorial-muted-dark leading-relaxed font-light">
+                  {project.challenges}
                 </p>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
+
+          {/* Segment 6: Business Results & Takeaways */}
+          {project.results && (
+            <section className="border-t border-editorial-border pt-12 dark:border-editorial-border-dark">
+              <div className="p-6 rounded-3xl border border-editorial-accent/20 bg-editorial-accent-light dark:border-editorial-accent-dark/20 dark:bg-editorial-accent-light-dark flex flex-col sm:flex-row items-center gap-6">
+                <div className="h-12 w-12 rounded-2xl bg-editorial-accent text-white flex items-center justify-center shrink-0">
+                  <Award className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-display text-xs font-bold uppercase tracking-wider text-editorial-accent dark:text-editorial-accent-dark mb-1">
+                    Results &amp; Impact
+                  </h4>
+                  <p className="text-xs sm:text-sm text-editorial-text dark:text-editorial-text-dark font-medium leading-relaxed">
+                    {project.results}
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
         </div>
 
         {/* Back Footer */}

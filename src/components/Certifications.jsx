@@ -21,7 +21,7 @@ export default function Certifications() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificationsData.map((cert) => (
             <motion.div
-              key={cert.credentialId}
+              key={`${cert.issuer}-${cert.title}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -41,7 +41,7 @@ export default function Certifications() {
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
                   <button
                     onClick={() => setSelectedCert(cert)}
-                    className="p-3 rounded-full bg-editorial-bg/90 text-editorial-text hover:bg-editorial-bg dark:bg-editorial-card-dark/90 dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark dark:border dark:border-editorial-border-dark shadow-md transition-all scale-90 group-hover:scale-100"
+                    className="p-3 rounded-full bg-editorial-bg/90 text-editorial-text hover:bg-editorial-bg dark:bg-editorial-card-dark/90 dark:text-editorial-text-dark dark:hover:bg-editorial-card-dark dark:border dark:border-editorial-border-dark shadow-md transition-all scale-90 group-hover:scale-100 cursor-pointer"
                     aria-label={`Zoom preview of ${cert.title}`}
                   >
                     <ZoomIn className="h-5 w-5" />
@@ -52,37 +52,52 @@ export default function Certifications() {
               {/* Text Info */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-editorial-accent uppercase tracking-widest dark:text-editorial-accent-dark">
-                    {cert.issuer} • {cert.date}
-                  </span>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[10px] font-bold text-editorial-accent uppercase tracking-widest dark:text-editorial-accent-dark">
+                      {cert.issuer}
+                    </span>
+                    {cert.achievement && (
+                      <span className="text-[10px] font-bold text-editorial-text dark:text-editorial-text-dark bg-editorial-accent-light dark:bg-editorial-accent-light-dark px-2 py-0.5 rounded-full">
+                        {cert.achievement}
+                      </span>
+                    )}
+                  </div>
                   
-                  <h3 className="font-display font-extrabold text-base text-editorial-text dark:text-editorial-text-dark tracking-tight leading-snug mt-2 group-hover:text-editorial-accent dark:group-hover:text-editorial-accent-dark transition-colors">
+                  <h3 className="font-display font-extrabold text-base text-editorial-text dark:text-editorial-text-dark tracking-tight leading-snug group-hover:text-editorial-accent dark:group-hover:text-editorial-accent-dark transition-colors">
                     {cert.title}
                   </h3>
                   
-                  <p className="text-[11px] font-mono text-editorial-muted dark:text-editorial-muted-dark mt-1">
-                    ID: {cert.credentialId}
-                  </p>
+                  {cert.description && (
+                    <p className="text-xs text-editorial-muted dark:text-editorial-muted-dark mt-2 leading-relaxed font-light">
+                      {cert.description}
+                    </p>
+                  )}
                 </div>
 
                 {/* Actions */}
                 <div className="flex items-center gap-3 border-t border-editorial-border pt-4 mt-6 dark:border-editorial-border-dark">
                   <button
                     onClick={() => setSelectedCert(cert)}
-                    className="btn-secondary flex-1 py-2 px-3 text-xs font-semibold rounded-lg"
+                    className="btn-secondary flex-1 py-2 px-3 text-xs font-semibold rounded-lg cursor-pointer"
                   >
-                    Preview
+                    View Details
                   </button>
 
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary flex-1 gap-1.5 py-2 px-3 text-xs font-semibold rounded-lg"
-                  >
-                    Verify
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
+                  {cert.link ? (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary flex-1 gap-1.5 py-2 px-3 text-xs font-semibold rounded-lg cursor-pointer"
+                    >
+                      Verify
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ) : (
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-editorial-muted dark:text-editorial-muted-dark text-right flex-1">
+                      Verified
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
